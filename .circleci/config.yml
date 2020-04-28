@@ -1,11 +1,12 @@
 version: 2.1
 orbs:
-  bridgecrew: bridgecrew/bridgecrew@0.0.3
+  bridgecrew: bridgecrew/bridgecrew@0.0.4
 jobs:
   run-bridgecrew:
     executor: bridgecrew/default
     steps:
       - checkout
+      - bridgecrew/install
       - bridgecrew/scan:
           directory: "."
           soft-fail: true
