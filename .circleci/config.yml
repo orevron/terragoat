@@ -8,7 +8,7 @@ jobs:
       - checkout
       - bridgecrew/install
       - bridgecrew/scan:
-          directory: "."
+          directory: "./terraform"
           soft-fail: true
 workflows:
   bridgecrew-scan:
