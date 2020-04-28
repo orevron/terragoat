@@ -8,7 +8,7 @@ jobs:
       - checkout
       - bridgecrew/scan:
           directory: "."
-          suppress: true
+          soft-fail: true
 workflows:
   bridgecrew-scan:
     jobs:
