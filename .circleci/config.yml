@@ -11,7 +11,7 @@ jobs:
           directory: "./terraform"
           soft-fail: true
           output: "json"
-          api-token: BC_API_TOKEN
+          api-key: BC_API_TOKEN
 workflows:
   bridgecrew-scan:
     jobs:
