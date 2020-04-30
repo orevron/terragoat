@@ -9,7 +9,6 @@ jobs:
       - bridgecrew/install
       - bridgecrew/scan:
           directory: "./terraform"
-          output: "json"
           api-key: $BC_API_TOKEN
 workflows:
   bridgecrew-scan:
