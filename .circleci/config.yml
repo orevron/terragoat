@@ -10,6 +10,7 @@ jobs:
       - bridgecrew/scan:
           directory: "./terraform"
           soft-fail: true
+          output: "json"
 workflows:
   bridgecrew-scan:
     jobs:
