@@ -1,15 +1,14 @@
 version: 2.1
 orbs:
-  bridgecrew: bridgecrew/bridgecrew@0.0.7
+  bridgecrew: bridgecrew/bridgecrew@0.0.8
 jobs:
   run-bridgecrew:
     executor: bridgecrew/default
     steps:
       - checkout
-      - bridgecrew/install
       - bridgecrew/scan:
           directory: "./terraform"
-          api-key: $BC_API_TOKEN
+          api-key-variable: $BC_API_TOKEN
 workflows:
   bridgecrew-scan:
     jobs:
