@@ -6,7 +6,7 @@ variable "company_name" {
 }
 
 variable "my_name" {
-  default = "myname"
+  default = "myname1"
 }
 
 variable "environment" {
