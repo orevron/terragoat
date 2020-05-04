@@ -5,6 +5,10 @@ variable "company_name" {
   default = "acme"
 }
 
+variable "my_name" {
+  default = "myname"
+}
+
 variable "environment" {
   default = "dev"
 }
