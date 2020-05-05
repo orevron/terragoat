@@ -6,7 +6,6 @@ jobs:
     machine: true
     steps:
       - checkout
-
 workflows:
   bridgecrew-scan:
     jobs:
