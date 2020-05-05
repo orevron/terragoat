@@ -3,7 +3,9 @@ orbs:
   bridgecrew: bridgecrew/bridgecrew@1.0.2
 jobs:
   bridgecrew-commands:
-    machine: true
+    executor:
+      docker:
+        - image: "python"
     steps:
       - checkout
       - bridgecrew/install
