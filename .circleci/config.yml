@@ -6,7 +6,7 @@ jobs:
     executor: bridgecrew/default
     steps:
       - checkout
-      - bridgecrew/bridgecrew_scan:
+      - bridgecrew/run_bridgecrew:
           directory: "./terraform"
           api-key-variable: BC_API_TOKEN
 workflows:
