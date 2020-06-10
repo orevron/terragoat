@@ -3,8 +3,7 @@ orbs:
   bridgecrew: bridgecrew/bridgecrew@1.0.2
 jobs:
   bridgecrew-commands:
-    docker:
-      - image: bridgecrew/default
+    executor: bridgecrew/default
     steps:
       - checkout
       - bridgecrew/install
