@@ -10,6 +10,7 @@ see: https://github.com/bridgecrewio/checkov/
 ## Getting started
 ### Installation
 You can deploy multiple terragoat stacks in a single AWS account using the parameters `TF_VAR_environment` and `TF_VAR_environment`.
+
  
 #### Create S3 bucket backend to keep Terraform state
 ```bash
