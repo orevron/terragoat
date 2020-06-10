@@ -4,7 +4,7 @@ orbs:
 jobs:
   bridgecrew-commands:
     docker:
-      - image: "python"
+      - image: bridgecrew/default
     steps:
       - checkout
       - bridgecrew/install
