@@ -19,6 +19,7 @@ resource "aws_iam_user_policy" "userpolicy" {
 
 
 
+
   policy = <<EOF
 {
   "Version": "2012-10-17",
