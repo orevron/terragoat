@@ -5,4 +5,7 @@ resource "aws_s3_bucket" "template_bucket" {
   tags = {
     Name = "local.bucket_name-data.aws_caller_identity.current.account_id"
   }
+  versioning {
+    enabled = true
+  }
 }
