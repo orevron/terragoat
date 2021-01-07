@@ -7,8 +7,8 @@ resource "aws_db_instance" "default" {
   vpc_security_group_ids  = ["${aws_security_group.default.id}"]
 
   identifier              = "rds-${local.resource_prefix.value}"
-  engine_version          = "8.0" # Latest major version 
-  instance_class          = "db.t3.micro" 
+  engine_version          = "8.0" # Latest major version
+  instance_class          = "db.t3.micro"
   allocated_storage       = "20"
   username                = "admin"
   password                = var.password
@@ -37,7 +37,7 @@ resource "aws_db_option_group" "default" {
   major_engine_version     = "8.0"
   option_group_description = "Terraform OG"
 
-  tags = { 
+  tags = {
     Name         = "${local.resource_prefix.value}-og"
     Environment  = local.resource_prefix.value
   }
@@ -59,7 +59,7 @@ resource "aws_db_parameter_group" "default" {
     value        = "utf8"
     apply_method = "immediate"
   }
- 
+
   tags = {
     Name         = "${local.resource_prefix.value}-pg"
     Environment  = local.resource_prefix.value
@@ -81,7 +81,7 @@ resource "aws_security_group" "default" {
   name          = "${local.resource_prefix.value}-rds-sg"
   vpc_id        = aws_vpc.web_vpc.id
 
-  tags = { 
+  tags = {
     Name        = "${local.resource_prefix.value}-rds-sg"
     Environment = local.resource_prefix.value
   }
@@ -104,9 +104,13 @@ resource "aws_security_group_rule" "egress" {
   cidr_blocks       = ["0.0.0.0/0"]
   security_group_id = "${aws_security_group.default.id}"
 }
+resource "aws_s3_bucket" "please" {
+  bucket        = "local.bucket_name"
+  force_destroy = true
+}
 
 
-### EC2 instance 
+### EC2 instance
 resource "aws_iam_instance_profile" "ec2profile" {
   name = "${local.resource_prefix.value}-profile"
   role = "${aws_iam_role.ec2role.name}"
@@ -132,7 +136,7 @@ resource "aws_iam_role" "ec2role" {
 }
 EOF
 
-  tags = {      
+  tags = {
     Name        = "${local.resource_prefix.value}-role"
     Environment = local.resource_prefix.value
   }
@@ -189,7 +193,7 @@ resource "aws_instance" "db_app" {
 ### Config from https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Tutorials.WebServerDB.CreateWebServer.html
 sudo yum -y update
 sudo yum -y install httpd php php-mysqlnd
-sudo systemctl enable httpd 
+sudo systemctl enable httpd
 sudo systemctl start httpd
 
 sudo mkdir /var/www/inc
@@ -201,7 +205,7 @@ define('DB_PASSWORD', '${var.password}');
 define('DB_DATABASE', '${aws_db_instance.default.name}');
 ?>
 EnD
-sudo mv /tmp/dbinfo.inc /var/www/inc 
+sudo mv /tmp/dbinfo.inc /var/www/inc
 sudo chown root:root /var/www/inc/dbinfo.inc
 
 cat << EnD > /tmp/index.php
@@ -324,7 +328,7 @@ function TableExists(\$tableName, \$connection, \$dbName) {
 
   return false;
 }
-?>               
+?>
 EnD
 
 sudo mv /tmp/index.php /var/www/html
