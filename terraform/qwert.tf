@@ -8,4 +8,7 @@ resource "aws_s3_bucket" "please" {
       }
     }
   }
+  versioning {
+    enabled = true
+  }
 }
