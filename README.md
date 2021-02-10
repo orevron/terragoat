@@ -70,6 +70,7 @@ do
 done
 ```
 
+
 #### Deleting multiple terragoat stacks 
 ```bash
 
