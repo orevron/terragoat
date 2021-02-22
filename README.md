@@ -86,3 +86,6 @@ do
     terraform destroy -auto-approve
 done
 ```
+
+
+
