@@ -11,6 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       BC_API_URL: https://iiw4bismy6.execute-api.us-west-2.amazonaws.com/v1/api/v1
+      API_KEY_VARIABLE: ${{ secrets.BRIDGECREW_API_KEY }}
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -20,4 +21,3 @@ jobs:
       uses: bridgecrewio/bridgecrew-action@master
       with:
         directory: terraform/aws
-        api-key: ${{ secrets.BRIDGECREW_API_KEY }}
