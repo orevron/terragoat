@@ -19,6 +19,5 @@ jobs:
       id: Bridgecrew-file-scanner
       uses: bridgecrewio/bridgecrew-action@master
       with:
-        file: "./terraform/db-app.tf"
-        output: "json"
+        directory: terragoat/terraform/aws
         api-key: ${{ secrets.BRIDGECREW_API_KEY }}
