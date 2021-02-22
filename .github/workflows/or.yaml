@@ -1,10 +1,8 @@
 # This is a basic workflow to help you get started with Actions
 name: CI
 # Controls when the action will run. Triggers the workflow on push or pull request
-
 # Triggers the workflow on push or pull request events
 on: [push, pull_request]          
-    
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -22,5 +20,11 @@ jobs:
       uses: bridgecrewio/bridgecrew-action@master
       with:
         directory: "terraform"
-        api-key: ${{ secrets.BRIDGECREW_API_KEY }}
         soft-fail: "true"
+    - name: Scan IaC file
+      id: Bridgecrew-file-scanner
+      uses: bridgecrewio/bridgecrew-action@master
+      with:
+        file: "./terraform/db-app.tf"
+        output: "json"
+        api-key: ${{ secrets.BRIDGECREW_API_KEY }}
