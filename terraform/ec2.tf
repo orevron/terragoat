@@ -1,6 +1,6 @@
 resource "aws_instance" "web_host" {
 
-  # ec2 test15
+  # ec2 test15 v2
   ami           = "${var.ami}"
   instance_type = "t2.nano"
 
