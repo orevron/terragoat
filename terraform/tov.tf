@@ -8,4 +8,7 @@ resource "aws_s3_bucket" "kisi_bucket" {
       }
     }
   }
+  versioning {
+    enabled = true
+  }
 }
