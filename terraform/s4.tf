@@ -7,10 +7,7 @@ resource "aws_sns_topic" "example1" {
 }
 
 resource "aws_sns_topic" "example2" {
-  tags              = {
-    Environment = "dev"
-    Owner       = "apps-team"
-  }
+ 
 }
 
 resource "aws_sns_topic" "example3" {
