@@ -11,7 +11,6 @@ resource "aws_sns_topic" "example2" {
     Environment = "dev"
     Owner       = "apps-team"
   }
-  
 }
 
 resource "aws_sns_topic" "example3" {
