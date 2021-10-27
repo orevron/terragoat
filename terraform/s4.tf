@@ -7,11 +7,6 @@ resource "aws_sns_topic" "example1" {
 }
 
 resource "aws_sns_topic" "example2" {
-  kms_master_key_id = "value"
- tags              = {
-    Environment = "dev"
-    Owner       = "apps-team"
-  }
 }
 
 resource "aws_sns_topic" "example3" {
