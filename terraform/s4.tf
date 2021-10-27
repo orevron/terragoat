@@ -7,6 +7,7 @@ resource "aws_sns_topic" "example1" {
 }
 
 resource "aws_sns_topic" "example2" {
+  kms_master_key_id = "alias/aws/sns"
 }
 
 resource "aws_sns_topic" "example3" {
