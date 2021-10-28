@@ -11,6 +11,7 @@ resource "aws_sns_topic" "example2" {
     Environment = "dev"
     Owner       = "apps-team"
   }
+  kms_master_key_id = 
 }
 
 resource "aws_sns_topic" "example3" {
