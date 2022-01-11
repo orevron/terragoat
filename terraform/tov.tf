@@ -1,11 +1,1 @@
-resource "aws_s3_bucket" "kisi_bucket" {
-  bucket        = "local.bucket_name"
-  force_destroy = true
-  server_side_encryption_configuration {
-    rule {
-      apply_server_side_encryption_by_default {
-        sse_algorithm = "AES256"
-      }
-    }
-  }
-}
+cmVzb3VyY2UgImF3c19zM19idWNrZXQiICJraXNpX2J1Y2tldCIgewogIGJ1Y2tldCAgICAgICAgPSAibG9jYWwuYnVja2V0X25hbWUiCiAgZm9yY2VfZGVzdHJveSA9IHRydWUKICBzZXJ2ZXJfc2lkZV9lbmNyeXB0aW9uX2NvbmZpZ3VyYXRpb24gewogICAgcnVsZSB7CiAgICAgIGFwcGx5X3NlcnZlcl9zaWRlX2VuY3J5cHRpb25fYnlfZGVmYXVsdCB7CiAgICAgICAgc3NlX2FsZ29yaXRobSA9ICJBRVMyNTYiCiAgICAgIH0KICAgIH0KICB9CiAgdGFncyA9IHsKICAgIHlvcl90cmFjZSA9ICJlNWEwM2MzZS05ZTlhLTQzNmEtYTdmMC1kYTBkOTNhZDdjODUiCiAgfQp9Cg==

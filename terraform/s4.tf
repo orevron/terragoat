@@ -1,17 +1,1 @@
-resource "aws_sns_topic" "example1" {
-  kms_master_key_id = "value"
-  tags              = {
-    Environment = "dev"
-    Owner       = "apps-team"
-  }
-}
-resource "aws_sns_topic" "example2" {
-}
-
-resource "aws_sns_topic" "example3" {
-  kms_master_key_id = "value"
-  tags              = {
-    Environment = "dev"
-    Owner       = "apps-team"
-  }
-}
+cmVzb3VyY2UgImF3c19zbnNfdG9waWMiICJleGFtcGxlMSIgewogIGttc19tYXN0ZXJfa2V5X2lkID0gInZhbHVlIgogIHRhZ3MgPSB7CiAgICBFbnZpcm9ubWVudCA9ICJkZXYiCiAgICBPd25lciAgICAgICA9ICJhcHBzLXRlYW0iCiAgICB5b3JfdHJhY2UgICA9ICI5MGZiOTg0ZS0wYTY1LTQ1ODYtOTdkZC0yMGIxYzJlNTZmMjAiCiAgfQp9CnJlc291cmNlICJhd3Nfc25zX3RvcGljIiAiZXhhbXBsZTIiIHsKICB0YWdzID0gewogICAgeW9yX3RyYWNlID0gIjU5MDc3NmQ2LWQ4ZGEtNDc5ZS1hYjRkLThmMjVhMDVlNjBjMSIKICB9Cn0KCnJlc291cmNlICJhd3Nfc25zX3RvcGljIiAiZXhhbXBsZTMiIHsKICBrbXNfbWFzdGVyX2tleV9pZCA9ICJ2YWx1ZSIKICB0YWdzID0gewogICAgRW52aXJvbm1lbnQgPSAiZGV2IgogICAgT3duZXIgICAgICAgPSAiYXBwcy10ZWFtIgogICAgeW9yX3RyYWNlICAgPSAiMTJlZTgxOGYtYzc4OC00ODA4LTg4MTgtZDkyNzcxMTQzNWNjIgogIH0KfQo=

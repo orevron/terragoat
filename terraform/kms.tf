@@ -1,11 +1,1 @@
-resource "aws_kms_key" "logs_key" {
-  # key does not have rotation enabled
-  description = "${local.resource_prefix.value}-logs bucket key"
-
-  deletion_window_in_days = 7
-}
-
-resource "aws_kms_alias" "logs_key_alias" {
-  name          = "alias/${local.resource_prefix.value}-logs-bucket-key"
-  target_key_id = "${aws_kms_key.logs_key.key_id}"
-}
+cmVzb3VyY2UgImF3c19rbXNfa2V5IiAibG9nc19rZXkiIHsKICAjIGtleSBkb2VzIG5vdCBoYXZlIHJvdGF0aW9uIGVuYWJsZWQKICBkZXNjcmlwdGlvbiA9ICIke2xvY2FsLnJlc291cmNlX3ByZWZpeC52YWx1ZX0tbG9ncyBidWNrZXQga2V5IgoKICBkZWxldGlvbl93aW5kb3dfaW5fZGF5cyA9IDcKICB0YWdzID0gewogICAgeW9yX3RyYWNlID0gImJlMjUyY2FkLTI0NzItNGIwZS05MjY3LWViYWJiZGI1MmQ5YiIKICB9Cn0KCnJlc291cmNlICJhd3Nfa21zX2FsaWFzIiAibG9nc19rZXlfYWxpYXMiIHsKICBuYW1lICAgICAgICAgID0gImFsaWFzLyR7bG9jYWwucmVzb3VyY2VfcHJlZml4LnZhbHVlfS1sb2dzLWJ1Y2tldC1rZXkiCiAgdGFyZ2V0X2tleV9pZCA9ICIke2F3c19rbXNfa2V5LmxvZ3Nfa2V5LmtleV9pZH0iCn0K
