@@ -1,4 +1,12 @@
 resource "aws_s3_bucket" "logs" {
+}
+
+
+resource "aws_s3_bucket_versioning" "logs" {
+  bucket = aws_s3_bucket.logs.id
+
+  versioning_configuration {
+    status = "Enabled"
   bucket = "${local.resource_prefix.value}-logs"
   acl    = "log-delivery-write"
   server_side_encryption_configuration {
