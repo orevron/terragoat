@@ -69,9 +69,7 @@ resource "aws_s3_bucket" "data_science" {
 resource "aws_s3_bucket" "logs" {
   bucket = "${local.resource_prefix.value}-logs"
   acl    = "log-delivery-write"
-  versioning {
-    enabled = true
-  }
+ 
   server_side_encryption_configuration {
     rule {
       apply_server_side_encryption_by_default {
