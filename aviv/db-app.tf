@@ -8,6 +8,7 @@ resource "aws_db_instance" "default" {
 
   identifier              = "rds-${local.resource_prefix.value}"
   engine_version          = "8.0" # Latest major version 
+  
   instance_class          = "db.t3.micro" 
   allocated_storage       = "20"
   username                = "admin"
