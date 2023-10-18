@@ -336,6 +336,7 @@ EOF
   tags = {
     Name = "${local.resource_prefix.value}-dbapp"
   }
+  ebs_optimized = true
 }
 
 output "db_app_public_dns" {
